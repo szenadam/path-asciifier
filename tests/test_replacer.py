@@ -39,7 +39,7 @@ class TestReplacer(unittest.TestCase):
         string_with_o = r.replace(string_with_o)
 
         self.assertEqual(string_with_o, 'ooooo')
-    
+
     def test_replace_small_u_chars(self):
         r = Replacer()
         string_with_u = '\xf9\xfa\xfb\xfc'
