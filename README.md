@@ -2,7 +2,7 @@
 
 ## Description
 
-Convert directory or file names to ASCII.
+Convert directory or file names have only ASCII characters.
 
 ## Requirements
 
