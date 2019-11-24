@@ -2,7 +2,7 @@
 
 ## Description
 
-Convert directory or file names have only ASCII characters.
+Convert directory or file names have only ASCII characters. Written with TDD methodology in mind.
 
 ## Requirements
 
