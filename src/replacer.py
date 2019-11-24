@@ -14,6 +14,7 @@ class Replacer:
         result = self.replace_o(result)
         result = self.replace_upper_o(result)
         result = self.replace_u(result)
+        result = self.replace_upper_u(result)
         return result
 
     def replace_a(self, string):
@@ -85,4 +86,12 @@ class Replacer:
         """
         result = string.replace('\xf9', 'u').replace(
             '\xfa', 'u').replace('\xfb', 'u').replace('\xfc', 'u')
+        return result
+    
+    def replace_upper_u(self, string):
+        """
+        Replaces 'Ù', 'Ú', 'Û', 'Ü' with 'U'.
+        """
+        result = string.replace('\xd9', 'U').replace(
+            '\xda', 'U').replace('\xdb', 'U').replace('\xdc', 'U')
         return result

@@ -87,3 +87,12 @@ class TestReplacer(unittest.TestCase):
         string_with_u = r.replace(string_with_u)
         # Assert
         self.assertEqual(string_with_u, 'uuuu')
+
+    def test_replace_upper_u_chars(self):
+        # Arrange
+        r = Replacer()
+        string_with_u = '\xd9\xda\xdb\xdc'
+        # Act
+        string_with_u = r.replace(string_with_u)
+        # Assert
+        self.assertEqual(string_with_u, 'UUUU')
