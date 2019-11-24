@@ -10,7 +10,9 @@ class Replacer:
         result = self.replace_e(result)
         result = self.replace_upper_e(result)
         result = self.replace_i(result)
+        result = self.replace_upper_i(result)
         result = self.replace_o(result)
+        result = self.replace_upper_o(result)
         result = self.replace_u(result)
         return result
 
@@ -53,12 +55,28 @@ class Replacer:
             '\xed', 'i').replace('\xee', 'i').replace('\xef', 'i')
         return result
 
+    def replace_upper_i(self, string):
+        """
+        Replaces 'Ì','Í','Î','Ï' with 'I'.
+        """
+        result = string.replace('\xcc', 'I').replace(
+            '\xcd', 'I').replace('\xce', 'I').replace('\xcf', 'I')
+        return result
+
     def replace_o(self, string):
         """
         Replaces 'ò', 'ó', 'ô', 'õ', 'ö' with 'o'.
         """
         result = string.replace('\xf2', 'o').replace(
             '\xf3', 'o').replace('\xf4', 'o').replace('\xf5', 'o').replace('\xf6', 'o')
+        return result
+
+    def replace_upper_o(self, string):
+        """ 
+        Replaces 'Ò', 'Ó', 'Ô', 'Õ', 'Ö' with 'O'.
+        """
+        result = string.replace('\xd2', 'O').replace(
+            '\xd3', 'O').replace('\xd4', 'O').replace('\xd5', 'O').replace('\xd6', 'O')
         return result
 
     def replace_u(self, string):
