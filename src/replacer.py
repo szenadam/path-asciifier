@@ -1,5 +1,11 @@
+"""
+Replacer classes and methods
+"""
 
 class Replacer:
+    """
+    The Replacer class is repsonsible for simply string replacements.
+    """
 
     def replace(self, string):
         """
