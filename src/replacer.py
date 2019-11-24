@@ -6,7 +6,9 @@ class Replacer:
         Replaces invalid characters from with ASCII equivalent.
         """
         result = self.replace_a(string)
+        result = self.replace_upper_a(result)
         result = self.replace_e(result)
+        result = self.replace_upper_e(result)
         result = self.replace_i(result)
         result = self.replace_o(result)
         result = self.replace_u(result)
@@ -20,12 +22,27 @@ class Replacer:
             '\xe2', 'a').replace('\xe3', 'a').replace('\xe4', 'a').replace('\xe5', 'a')
         return result
 
+    def replace_upper_a(self, string):
+        """
+        Replaces 'À','Á','Â','Ã','Ä','Å' with 'A'.
+        """
+        result = string.replace('\xc0', 'A').replace('\xc1', 'A').replace(
+            '\xc2', 'A').replace('\xc3', 'A').replace('\xc4', 'A').replace('\xc5', 'A')
+        return result
+
     def replace_e(self, string):
         """
         Replaces 'è', 'é', 'ê', 'ë' with 'e'.
         """
         result = string.replace('\xe8', 'e').replace(
             '\xe9', 'e').replace('\xea', 'e').replace('\xeb', 'e')
+        return result
+
+    def replace_upper_e(self, string):
+        """
+        Replaces 'È', 'É', 'Ê', 'Ë' with 'E'.
+        """        
+        result = string.replace('\xc8', 'E').replace('\xc9', 'E').replace('\xca', 'E').replace('\xcb', 'E')
         return result
 
     def replace_i(self, string):
