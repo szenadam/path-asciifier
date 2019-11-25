@@ -13,7 +13,7 @@ class TestLister(unittest.TestCase):
     def test_lists_files(self):
         # Arrange
         l = FileLister()
-        expected = [os.path.join('.', 'foo'), os.path.join('.', 'bar'), os.path.join('.', 'baz')]
+        expected = [os.path.join('.', i) for i in ['foo', 'bar', 'baz']]
         result = []
         # Act
         with mock.patch('os.walk') as mockwalk:
