@@ -78,7 +78,7 @@ class TestReplacer(unittest.TestCase):
         string_with_o = r.replace(string_with_o)
         # Assert
         self.assertEqual(string_with_o, 'OOOOO')
-    
+
     def test_replace_small_u_chars(self):
         # Arrange
         r = Replacer()
@@ -96,3 +96,14 @@ class TestReplacer(unittest.TestCase):
         string_with_u = r.replace(string_with_u)
         # Assert
         self.assertEqual(string_with_u, 'UUUU')
+
+    def test_replace_all_invalid_characters(self):
+        # Arrange
+        r = Replacer()
+        string_with_invalid_characters = '\xe0\xe1\xe2\xe3\xe4\xe5\xc0\xc1\xc2\xc3\xc4\xc5\xe8\xe9\xea\xeb\xc8\xc9\xca\xcb\xec\xed\xee\xef\xcc\xcd\xce\xcf\xf2\xf3\xf4\xf5\xf6\xd2\xd3\xd4\xd5\xd6\xf9\xfa\xfb\xfc\xd9\xda\xdb\xdc'
+        # Act
+        string_with_invalid_characters = r.replace(
+            string_with_invalid_characters)
+        # Arrange
+        self.assertEqual(string_with_invalid_characters,
+                         'aaaaaaAAAAAAeeeeEEEEiiiiIIIIoooooOOOOOuuuuUUUU')
