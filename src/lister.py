@@ -1,6 +1,7 @@
 import os
 
-class FileLister():
+
+class FileLister:
     def list_files(self, path):
         result = list()
         for root, dir, file in os.walk(path):
@@ -10,8 +11,8 @@ class FileLister():
 
     def list_dirs(self, path):
         result = list()
-        for root, dir, file in os.walk(path):
-            print(dir)
-            for d in dir:
+        for root, dirs, file in os.walk(path):
+            print(dirs)
+            for d in dirs:
                 result.append(os.path.join(root, d))
         return result
