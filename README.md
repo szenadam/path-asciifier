@@ -13,3 +13,15 @@ Convert directory or file names have only ASCII characters. Written with TDD met
 ```sh
 python3 -m unittest
 ```
+
+## Running the app
+
+```sh
+python3 src/main.py
+```
+
+## TODO
+
+- `WhatIf` flag
+- Rename files only flag
+- Rename directories only flag
