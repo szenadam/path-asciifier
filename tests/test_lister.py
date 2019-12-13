@@ -1,6 +1,6 @@
 import unittest, os
 from unittest import mock
-from src.lister import FileLister
+from modules.lister import FileLister
 
 
 class TestLister(unittest.TestCase):

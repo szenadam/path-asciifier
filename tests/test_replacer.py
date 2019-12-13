@@ -1,5 +1,5 @@
 import unittest
-from src.replacer import Replacer
+from modules.replacer import Replacer
 
 
 class TestReplacer(unittest.TestCase):
